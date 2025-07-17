@@ -3,6 +3,7 @@ import dotenv from "dotenv"; // 백엔드에서는 .env에 접근하기 위해�
 import { testTagGenerate } from "./services/tagService.js";
 import postRouter, { init } from "./routes/posts.js";
 import { connectDB } from "./database/db.js";
+import cors from "cors";
 
 // 환경변수 로드
 // 전역으로 로드해서 모든 node.js 모듈 내에서 접근 가능
@@ -10,6 +11,9 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
+
+// CORS 설정
+app.use(cors()); // 모든 도메인 허용
 
 // Json 파싱 설정
 app.use(express.json());

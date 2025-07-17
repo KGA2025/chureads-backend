@@ -41,7 +41,6 @@ router.post("/", async (req, res) => {
     const post = req.body;
     // GPT AI로 태그 생성
     const tags = await generateTags(post.content);
-    console.log("🚀 ~ tags:", tags);
 
     // 데이터 추가
     const newItem = {
