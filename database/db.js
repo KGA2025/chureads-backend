@@ -13,7 +13,7 @@ export const connectDB = async () => {
     const MONGODB_URI =
       process.env.NODE_ENV === "development"
         ? process.env.MONGODB_URI_LOCAL
-        : process.env.MONGODB_ATLAS_;
+        : process.env.MONGODB_URI_ATLAS;
     const client = new MongoClient(MONGODB_URI);
     await client.connect();
     db = client.db(process.env.DB_NAME);
